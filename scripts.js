@@ -34,11 +34,16 @@ function takeCell(event)
         When the button is clicked, the space inside its square brackets is replaced by the value in the nextPlayer before switching it
     */
    event.target.innerText = nextPlayer;
-   if(nextPlayer === 'x'){
-       nextPlayer = 0;
-       player = document.getElementById('next-lbl');
-       player.innerText = nextPlayer; 
-   }
+    if(nextPlayer==='X'){
+        nextPlayer = 'O';
+        player = document.getElementById('next-lbl');
+        player.innerText = nextPlayer;
+
+    }else if(nextPlayer ==='O'){
+        nextPlayer ='X';
+        player = document.getElementById('next-lbl');
+        player.innerText = nextPlayer;
+    }
    event.target.disabled = 'disabled';
 
     // Make sure the button is clickable only once (I didn't mention how to do that, look it up :) )
